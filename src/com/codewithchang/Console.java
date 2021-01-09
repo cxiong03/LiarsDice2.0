@@ -1,36 +1,30 @@
 package com.codewithchang;
 
+import java.util.Scanner;
+
 public class Console {
+    Scanner scanner = new Scanner(System.in);
     public int getInt(int min, int max, String query) {
-        return 0;
+            int value = 0;
+            do {
+            System.out.println(query);
+            value = scanner.nextInt();
+            }
+            while(value < min || value > max);
+            return value;
     }
 
+    public boolean getYN(String yes, String no, String query) {
+        String input = "";
+        do {
+            System.out.println(query);
+            input = scanner.nextLine();
+        } while (!input.equals(yes) && !input.equals(no));
+        return input.equals(yes);
+    }
 
-
-
-//    static Scanner scanner = new Scanner(System.in);
-//
-//    static public void welcome() {
-//        System.out.println("Welcome to Yahtzee");
-//    }
-//
-//    static public int getChoice() {
-//        System.out.print("pick a die 1 - 5 to re-roll: ");
-//        int choice = scanner.nextInt();
-//        return choice - 1;
-//
-//    }
-//
-//    static public List<Integer> getChoices() {
-//        List<Integer> choices = new ArrayList<>();
-//        // TODO: get the choices
-//        System.out.println("Which dice do you want to reroll?");
-//        String input = scanner.nextLine(); // "2 4 5"
-//        String[] inputArray = input.split(" "); // ["2", "4", "5"] -> <2, 4, 5>
-//        for (String number : inputArray) {
-//            choices.add(Integer.parseInt(number) - 1);
-//        }
-//
-//        return choices;
-//    }
+    public String getString(String query) {
+        System.out.println(query);
+        return scanner.nextLine();
+    }
 }

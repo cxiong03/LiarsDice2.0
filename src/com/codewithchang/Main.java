@@ -3,16 +3,12 @@ package com.codewithchang;
 public class Main {
 
     public static void main(String[] args) {
-	    Cup player1Cup = new Cup(7);
-	    player1Cup.peek();
-	    player1Cup.roll();
-	    player1Cup.peek();
-	    player1Cup.addDie();
-        player1Cup.roll();
-        player1Cup.peek();
-        player1Cup.roll();
-        player1Cup.removeDie();
-        player1Cup.peek();
-        player1Cup.roll();
+	    Player player = new Player("player1");
+	    player.roll();
+	    player.peek();
+	    int[] claim = player.getClaim();
+        System.out.println("Player claimed there are " + claim[1] + " " + claim[0] + "s");
+        boolean decision = player.getDecision();
+        System.out.println(decision ? "Lie called" : "Player on");
     }
 }
