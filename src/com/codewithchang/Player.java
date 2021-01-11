@@ -20,9 +20,10 @@ public class Player {
         cup.peek();
     }
 
-    public void getName() {
-
+    public String getName() {
+        return name;
     }
+
     // make claim
     // get from user two ints one for die value 1-6 and one for amount 1-14
     public int[] getClaim() {

@@ -32,12 +32,14 @@ public class LiarsDice {
 
     public void runTurn(Player player) {
         console.getString(player.getName() + "'s turn press enter to continue");
+        player.peek();
         boolean decision = player.getDecision();
         if (decision) {
             // called lie end turns.
             return;
         }
         int[] newClaim = players.get(0).getClaim();
+        isValidClaim(newClaim);
         //validate claim if invalid ask for new claim
         //new claim must increment either the value or the count of the previous claim.
         //if the value is raised the count can ve any number.
